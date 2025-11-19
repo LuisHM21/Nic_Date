@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>¿Segura? 😔</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="23262675" data-share-method="host" 
+            data-aspect-ratio="1.00946" data-width="100%">
+            <a href="https://tenor.com/view/chibi-cat-mochi-cat-white-cat-mushy-cat-gif-23262675">Chibi Cat Mochi Cat Sticker</a>
+            from <a href="https://tenor.com/search/chibi+cat-stickers">Chibi Cat Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <h1>¿Estás segura? 😔 Piénsalo bien…</h1>
+
+        <div class="btn">
+            <a href="si.html">SI</a>
+            <a href="no2.html">NO</a>
+        </div>
+
+        <script>
+        function crearObjeto() {
+            const objeto = document.createElement("div");
+            objeto.classList.add("objeto");
+            objeto.innerHTML = "😔";
+
+            objeto.style.left = Math.random() * 100 + "vw";
+            objeto.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            document.body.appendChild(objeto);
+
+            setTimeout(() => {
+                objeto.remove();
+            }, 6000);
+        }
+
+        setInterval(crearObjeto, 400);
+    </script>
+
+</body>
+</html>

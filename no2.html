@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Serás Mía...</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="18800154" data-share-method="host" 
+        data-aspect-ratio="1" data-width="100%">
+            <a href="https://tenor.com/view/mitao-cat-mochi-mochi-cat-gif-18800154">Mitao Cat Mochi Mochi Cat Sticker</a>
+            from <a href="https://tenor.com/search/mitao+cat-stickers">Mitao Cat Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <h1>Serás Mía Por Las Buenas O Por Las Malas 😈</h1>
+
+        <div class="btn">
+            <a href="si.html">SI</a>
+            <a href="#" id="random-btn">NO</a>
+        </div>
+    </div>
+    <script>
+        function crearObjeto() {
+            const objeto = document.createElement("div");
+            objeto.classList.add("objeto");
+            objeto.innerHTML = "😈";
+
+            objeto.style.left = Math.random() * 100 + "vw";
+            objeto.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            document.body.appendChild(objeto);
+
+            setTimeout(() => {
+                objeto.remove();
+            }, 6000);
+        }
+
+        setInterval(crearObjeto, 400);
+    </script>
+
+    <!-- SCRIPT DEL BOTÓN HUIDOR -->
+    <script src="script.js"></script>
+
+</body>
+</html>

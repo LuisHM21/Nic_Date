@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", cursive;
+}
+
+/* Fondo rosado suave */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe0f0, #ffd6e8, #fff3fa);
+    animation: fade 2s ease-in-out;
+}
+
+/* Animación de aparición */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 30px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 40px rgba(255, 0, 200, 0.3);
+}
+
+/* Título con glow */
+h1 {
+    font-size: 28px;
+    color: #ff4f8b;
+    text-shadow: 0 0 10px rgba(255, 0, 120, 0.4);
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* Marco bonito para la foto */
+.photo-frame {
+    padding: 10px;
+    border-radius: 20px;
+    background: #ffb6d9;
+    box-shadow: 0 5px 20px rgba(255, 0, 130, 0.3);
+    animation: pop 1.2s ease;
+}
+
+.photo-frame img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+}
+
+/* Animación de aparición suave */
+@keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Botón bonito */
+.btn a {
+    text-decoration: none;
+    color: white;
+    background: #ff6fa6;
+    padding: 15px 50px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(255, 0, 150, 0.4);
+    transition: 0.3s;
+}
+
+.btn a:hover {
+    background: #ff5690;
+    transform: scale(1.1);
+}
+
+.corazon {
+    position: fixed;
+    top: -10px;
+    font-size: 30px;
+    animation: caer linear forwards;
+    pointer-events: none;
+}
+
+@keyframes caer {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}

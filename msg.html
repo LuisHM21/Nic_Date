@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="msg.css">
+    <title>Para Ti ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe0f0, #ffd6e8, #fff3fa);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Container principal */
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.7);
+            padding: 30px;
+            border-radius: 25px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 40px rgba(255,0,150,0.3);
+            max-width: 700px;
+            opacity: 0;                  /* Inicialmente invisible */
+            transform: translateY(30px); /* Comienza un poco hacia abajo */
+            transition: all 1s ease-out; /* Duración y suavidad de la transición */
+        }
+
+        /* Contenedor visible después de la carga */
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #ff4f8b;
+            text-shadow: 0 0 10px rgba(255,0,120,0.4);
+            margin-bottom: 20px;
+        }
+
+        /* Fotos con animación de aparición escalonada */
+        .photo-frame {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .photo-frame img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(255,0,120,0.4);
+            transform: scale(0);
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .photo-frame img.show {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .photo-frame img:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .message-box {
+            background: #ffd1dc;          
+            border-radius: 25px;          
+            padding: 25px 30px;           
+            font-size: 20px;              
+            color: #800040;               
+            line-height: 1.7;             
+            text-align: justify;           
+            text-shadow: 0 0 5px rgba(255,255,255,0.5); 
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);       
+            max-width: 700px;             
+            margin: 20px auto;            
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease-out;
+        }
+
+        .message-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .message-box em {
+            display: block;
+            margin-top: 15px;
+            font-style: normal;
+            font-weight: bold;
+            color: #600030;
+        }
+        .message-box small {
+            display: block;
+            margin-top: 5px;
+            color: #550025;
+            font-size: 14px;
+        }
+
+        /* CORAZONES FLOTANDO */
+        .corazon {
+            position: fixed;
+            top: -10px;
+            font-size: 30px;
+            animation: caer linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes caer {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💌 Para Mi Amor 💌</h1>
+
+        <div class="photo-frame">
+            <img src="girlfriend2.jfif" alt="">
+            <img src="girlfriend3.jfif" alt="">
+            <img src="girlfriend4.jfif" alt="">
+            <img src="girlfriend5.jfif" alt="">
+        </div>
+
+        <div class="message-box">
+            Bueno, por donde empiezo... Aquí es donde me pongo cursi y romántico haha, como siempre jiji.  
+            Hacía mucho que no me sentía así por alguien, y tú lograste hacer que me enamorara de ti.  
+            Nicté, eres lo mejor de mi vida. No quiero perderte ni dejarte ir, quiero quedarme a tu lado siempre  
+            y hacerte feliz todos los días de mi vida.  
+
+            Cada momento, cada risa, cada abrazo y cada beso contigo son tesoros que guardo en mi corazón.  
+            Eres mi inspiración, mi alegría y mi razón para sonreír.  
+            Gracias por existir y por hacerme tan feliz ❤️  
+            <br> TE AMO MUCHO MI NIKI PRECIOSA 😍  
+            
+            <em>By: Tu Novio Luigi 😘</em>  
+            <small>PD: Me tardé un chorro codigando esto, espero te guste jiji</small>
+        </div>
+    </div>
+
+    <!-- CORAZONES FLOTANDO -->
+    <script>
+        function crearCorazon() {
+            const corazon = document.createElement("div");
+            corazon.classList.add("corazon");
+            corazon.innerHTML = "💖";
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            document.body.appendChild(corazon);
+            setTimeout(() => corazon.remove(), 6000);
+        }
+        setInterval(crearCorazon, 400);
+
+        // Animaciones al cargar la página
+        window.addEventListener("load", () => {
+            const container = document.querySelector(".container");
+            container.classList.add("show");
+
+            // Animación escalonada para cada foto
+            const fotos = document.querySelectorAll(".photo-frame img");
+            fotos.forEach((foto, index) => {
+                setTimeout(() => {
+                    foto.classList.add("show");
+                }, 500 + index * 300); // 300ms de retraso entre cada foto
+            });
+
+            // Animación del mensaje después de las fotos
+            setTimeout(() => {
+                document.querySelector(".message-box").classList.add("show");
+            }, 1800);
+        });
+    </script>
+</body>
+</html>
